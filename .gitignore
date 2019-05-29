@@ -1,0 +1,13 @@
+# code
+__pycache__/
+.vscode
+.ipynb_checkpoints/
+
+# os
+.DS_Store
+
+#env
+.python-version
+
+# other
+spark-warehouse/
