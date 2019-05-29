@@ -11,3 +11,6 @@ __pycache__/
 
 # other
 spark-warehouse/
+
+#data
+data/similarity_metrics
