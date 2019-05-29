@@ -14,3 +14,6 @@ spark-warehouse/
 
 #data
 data/similarity_metrics
+
+#jupyter
+*.ipynb

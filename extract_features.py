@@ -10,7 +10,7 @@ def main(in_path, out_path):
     edge_list = sc.textFile(in_path)
 
     metrics_data = extract_features(sc, edge_list, METRICS)
-    metrics_data.saveAsTextFile(out_path)
+    metrics_data.repartition(1).saveAsTextFile(out_path)
 
 
 if __name__ == "__main__":
