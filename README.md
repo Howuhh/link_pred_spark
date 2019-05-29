@@ -1,19 +1,21 @@
-# similarity between nodes
+# Similarity between nodes
 
-This module allows you to calculate similarity metrics based on local information for the nodes of the graph, ranking by the number of the most similar ones, and easily add new metrics. Friends of friends are selected as candidates for each node. The final dataset with metrics can be used to train machine learning models to predict edges between nodes which are likely to appear in the future.
+This module allows you to calculate similarity metrics based on local information for the nodes of the graph, ranking by the number of the most similar ones, and easily add new metrics. 
+
+Friends of friends are selected as candidates for each node. The final dataset with metrics can be used to train machine learning models to predict edges between nodes which are likely to appear in the future.
 
 For additional info about metrics see [predicting missing links via local information](http://image.sciencenet.cn/olddata/kexue.com.cn/upload/blog/file/2009/10/2009102822251329127.pdf) paper
 
-# how to use
+# How to use
 
 The input graph data should be in an edge list format.
 In order to compute the metrics, you need to specify the path to the source data and the path along which the final dataset will be saved.
 
 ```console
-MacBook-Pro-Alex:alex$ python3 extract_features.py input_data_path out_data_path
+MacBook-Pro-Alex:link_pred_spark alex$ python extract_features.py input_path out_path
 ```
 
-# how to add new metrics
+# How to add new metrics
 Each metric function must take a dictionary of the form of `{node_id: [list of neighbors]}`, as well as a pair of nodes for comparison.
 
 **Example**:
@@ -61,7 +63,7 @@ METRICS = [
 ```
 That's all it is. The order in the final dataset is maintained, so this metric will be the last column.
 
-# spark config
+# Spark config
 
 To configure configuration settings for spark, you can also change config. For example, let's change the number of cores to two.
 
