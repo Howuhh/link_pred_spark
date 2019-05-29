@@ -8,7 +8,7 @@ For additional info about metrics see [predicting missing links via local inform
 
 # How to use
 
-The input graph data should be in an edge list format.
+The input graph data should be in an edge list format.  
 In order to compute the metrics, you need to specify the path to the source data and the path along which the final dataset will be saved.
 
 ```console
@@ -24,15 +24,17 @@ We will add a metric based on resource allocation. To do this, let's define the 
 
 ```python
 # linkpred/metrics.py
-def res_allocation_score(neighbors, n1, n2):
+
+def res_allocation_score(neighbors, node1, node2):
     """
-    Similarity measure based on resource allocation.
-    For a detailed explanation see Tao Zhou, 
-    Linyuan Lu ̈ and Yi-Cheng Zhang paper: https://arxiv.org/abs/0901.0553
+    Similarity measure based on resource allocation. 
+    For a detailed explanation see Tao Zhou, Linyuan Lu ̈ 
+    and Yi-Cheng Zhang paper: https://arxiv.org/abs/0901.0553
+    
     Parameters
     ----------
-    g_neighbors: dict
-        Dictionary in format {node_id: array_of_neighbors},
+    neighbors: dict
+        Dictionary in format {node_id: [list_of_neighbors]},
     node1: int
         Node id
     node2: int
@@ -42,14 +44,14 @@ def res_allocation_score(neighbors, n1, n2):
     score: int
         Nodes similarity score.
     """
-    common = _common_neighbors(neighbors, n1, n2)
+    common = _common_neighbors(neighbors, node1, node2)
     degrees = _common_degree(neighbors, common)
 
     score = np.sum(degrees)
 
     return score
 ```
-We will also use the helper functions from utils module to calculate the common neighbors for the two nodes and the degree of common neighbors.
+We will also use the helper functions from metrics module to calculate the common neighbors for the two nodes and the degree of common neighbors.
 
 The only thing left to do is to add this to the config, which in this case is just a dictionary. 
 
