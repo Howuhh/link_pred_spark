@@ -50,7 +50,7 @@ def get_second_neighbors(neighbors, node):
     return list(second_neighbors)
 
 
-def compute_metrics(neighbors, metrics_, node, top_n=40):
+def compute_metrics(neighbors, metrics_, node, top_n):
     node, cands = node
     scores = []
 

@@ -24,6 +24,7 @@ We will add a metric based on resource allocation. To do this, let's define the 
 
 ```python
 # linkpred/metrics.py
+import numpy as np
 
 def res_allocation_score(neighbors, node1, node2):
     """
@@ -76,3 +77,17 @@ CONF_PARAMS = {
     "spark.app.name": "linkpred_spark",
 }
 ```
+
+# Available metrics
+
+By default, these metrics are available: 
+
+* Common Neighbours 
+* Salton Index  
+* Jaccard Index 
+* Sørensen Index    
+* Hub Promoted Index
+* Leicht-Holme-Newman Index
+* Preferential Attachment
+* Adamic-Adar Index
+* Resource Allocation
