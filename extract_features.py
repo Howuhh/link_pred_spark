@@ -14,6 +14,6 @@ def main(in_path, out_path):
 
 
 if __name__ == "__main__":
-    # in_path, out_path = sys.argv[1], sys.argv[2]
-    in_path, out_path = "data/test_data.txt", "data/similarity_metrics"
+    in_path, out_path = sys.argv[1], sys.argv[2]
+    # in_path, out_path = "data/test_data.txt", "data/similarity_metrics"
     main(in_path, out_path)

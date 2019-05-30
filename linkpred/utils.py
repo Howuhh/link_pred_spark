@@ -65,6 +65,7 @@ def compute_metrics(neighbors, metrics_, node, top_n):
                 raise AttributeError("Unknown metric: {metric}")
         scores.append(node_scores)
 
-    scores = sorted(scores, key=lambda scores: scores[1])
+    # sort by first metric
+    scores = sorted(scores, key=lambda scores: scores[2])
 
     return scores[:top_n]

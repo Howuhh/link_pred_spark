@@ -4,7 +4,7 @@ This module allows you to calculate similarity metrics based on local informatio
 
 Friends of friends are selected as candidates for each node. The final dataset with metrics can be used to train machine learning models to predict edges between nodes which are likely to appear in the future.
 
-For additional info about metrics see [predicting missing links via local information](http://image.sciencenet.cn/olddata/kexue.com.cn/upload/blog/file/2009/10/2009102822251329127.pdf) paper
+For additional info about metrics see [predicting missing links via local information](http://image.sciencenet.cn/olddata/kexue.com.cn/upload/blog/file/2009/10/2009102822251329127.pdf) paper.
 
 # How to use
 
