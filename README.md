@@ -54,7 +54,7 @@ def res_allocation_score(neighbors, node1, node2):
 ```
 We will also use the helper functions from metrics module to calculate the common neighbors for the two nodes and the degree of common neighbors.
 
-The only thing left to do is to add this to the config, which in this case is just a dictionary. 
+The only thing left to do is to add this to the config, which in this case is just a list or dictionary. 
 
 ```python
 # config.py
