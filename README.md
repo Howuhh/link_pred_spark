@@ -91,3 +91,9 @@ By default, these metrics are available:
 * Preferential Attachment
 * Adamic-Adar Index
 * Resource Allocation
+
+# TODO
+
+- [ ] - add docstrings
+- [ ] - add CLI
+
