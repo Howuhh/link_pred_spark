@@ -8,11 +8,24 @@ For additional info about metrics see [predicting missing links via local inform
 
 # How to use
 
-The input graph data should be in an edge list format.  
-In order to compute the metrics, you need to specify the path to the source data and the path along which the final dataset will be saved.
+The input graph data should be in an edge list format.  In order to compute the metrics, you need to specify the path to the source data and the path along which the final dataset will be saved.
 
 ```console
-MacBook-Pro-Alex:link_pred_spark alex$ python extract_features.py input_path out_path
+Usage: extract_features.py [OPTIONS] IN_PATH OUT_PATH
+
+  This module allows you to calculate similarity metrics based on local
+  information for the nodes of the graph.
+
+  You should specify IN_PATH for input graph data in edgelist format  and
+  OUT_PATH along which the final dataset with metrics will be saved.
+  Metrics and Spark configuration settings should be specified in config.py.
+
+Options:
+  --top_n INTEGER   The number of most similar candidates to leave for final
+                    dataset for each node. All other candidates will be
+                    filtered.
+  --csv_delim TEXT  СSV file separator, should be string.
+  --help            Show this message and exit.
 ```
 
 # How to add new metrics

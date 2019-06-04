@@ -30,24 +30,11 @@ def to_undirected(node):
     return double
 
 
-def get_neighbors(edge_list):
-    neighbors = edge_list.groupByKey().map(
-        lambda node: [node[0], node[1].data]
-    )
+def to_csv(row, delim):
+    assert isinstance(delim, str), "delimiter should be string"
+    csv_row = f"{delim}".join(str(i) for i in row)
 
-    return neighbors
-
-
-def get_second_neighbors(neighbors, node):
-    node_neighbors = neighbors[node]
-    visited = []
-
-    for node_ in node_neighbors:
-        visited.extend(neighbors[node_])
-
-    second_neighbors = set(visited) - set(node_neighbors + [node])
-
-    return list(second_neighbors)
+    return csv_row
 
 
 def compute_metrics(neighbors, metrics_, node, top_n):
@@ -59,10 +46,11 @@ def compute_metrics(neighbors, metrics_, node, top_n):
         for metric in metrics_:
             try:
                 scorer = getattr(metrics, metric)
-                score = scorer(neighbors, node, cand)
-                node_scores.append(score)
             except AttributeError:
                 raise AttributeError("Unknown metric: {metric}")
+            # compute similarity
+            score = scorer(neighbors, node, cand)
+            node_scores.append(score)
         scores.append(node_scores)
 
     # sort by first metric

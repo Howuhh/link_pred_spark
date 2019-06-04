@@ -1,11 +1,11 @@
 
-# docstring here
+# spark context configuration
 CONF_PARAMS = {
     "spark.master": "local[*]",
     "spark.app.name": "linkpred_spark",
 }
 
-# docstring here
+# metrics to compute
 METRICS = [
     "common_neighbors_score",
     "adamic_adar_score",
