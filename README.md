@@ -10,7 +10,7 @@ For additional info about metrics see [predicting missing links via local inform
 
 The input graph data should be in an edge list format.  In order to compute the metrics, you need to specify the path to the source data and the path along which the final dataset will be saved.
 
-```shell
+```console
 Usage: extract_features.py [OPTIONS] IN_PATH OUT_PATH
 
   This module allows you to calculate similarity metrics based on local
