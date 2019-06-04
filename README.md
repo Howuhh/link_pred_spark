@@ -10,7 +10,7 @@ For additional info about metrics see [predicting missing links via local inform
 
 The input graph data should be in an edge list format.  In order to compute the metrics, you need to specify the path to the source data and the path along which the final dataset will be saved.
 
-```console
+```shell
 Usage: extract_features.py [OPTIONS] IN_PATH OUT_PATH
 
   This module allows you to calculate similarity metrics based on local
@@ -31,7 +31,7 @@ Options:
 # How to add new metrics
 Each metric function must take a dictionary of the form of `{node_id: [list of neighbors]}`, as well as a pair of nodes for comparison.
 
-**Example**:
+**Example**:    
 The use case of how to add new metrics is demonstrated.
 We will add a metric based on resource allocation. To do this, let's define the function according to the arguments' requirements.
 
@@ -104,9 +104,4 @@ By default, these metrics are available:
 * Preferential Attachment
 * Adamic-Adar Index
 * Resource Allocation
-
-# TODO
-
-- [ ] - add docstrings
-- [ ] - add CLI
 
