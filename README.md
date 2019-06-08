@@ -105,3 +105,5 @@ By default, these metrics are available:
 * Adamic-Adar Index
 * Resource Allocation
 
+# TODO
+- [ ] - Add docstrings for metrics
