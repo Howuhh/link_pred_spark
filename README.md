@@ -105,5 +105,6 @@ By default, these metrics are available:
 * Adamic-Adar Index
 * Resource Allocation
 
-# TODO
-- [ ] - Add docstrings for metrics
+# P.S.
+
+[A more optimized implementation](https://github.com/marnikitta/missing-links) in which you do not have to return the data to the driver to calculate metrics for pairs. This is achieved by generating triplets and calculating partial sums.
