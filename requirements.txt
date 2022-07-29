@@ -28,7 +28,7 @@ lazy-object-proxy==1.4.1
 MarkupSafe==1.1.1
 matplotlib==3.0.3
 mccabe==0.6.1
-mistune==0.8.4
+mistune==2.0.3
 multiprocess==0.70.7
 nbconvert==5.5.0
 nbformat==4.4.0
